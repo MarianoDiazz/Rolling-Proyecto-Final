@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Form, Button,Container } from 'react-bootstrap';
+import { Form, Button, Container, Row } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import { Navigate, useNavigate, Link } from 'react-router-dom';
+import "./register.css"
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -80,75 +81,85 @@ const Register = () => {
     return <Navigate to="/" />;
   }
 
-  return (<Container>
-    <Form onSubmit={handleSubmit}>
-      <Form.Group controlId="firstName">
-        <Form.Label>Nombre</Form.Label>
-        <Form.Control
-          type="text"
-          name="firstName"
-          value={formData.firstName}
-          onChange={handleInputChange}
-          onBlur={handleInputBlur}
-          isInvalid={!!formErrors.firstName}
-        />
-        <Form.Control.Feedback type="invalid">
-          {formErrors.firstName}
-        </Form.Control.Feedback>
-      </Form.Group>
-      <Form.Group controlId="lastName">
-        <Form.Label>Apellido</Form.Label>
-        <Form.Control
-          type="text"
-          name="lastName"
-          value={formData.lastName}
-          onChange={handleInputChange}
-          onBlur={handleInputBlur}
-          isInvalid={!!formErrors.lastName}
-        />
-        <Form.Control.Feedback type="invalid">
-          {formErrors.lastName}
-        </Form.Control.Feedback>
-      </Form.Group>
+  return (
+    <div id='containerRegister'>
+      <Container id="bodyRegister" className='py-4' >
+        <Form onSubmit={handleSubmit}>
+          <Form.Group controlId="firstName">
+            <Form.Label>Nombre <span>*</span></Form.Label>
+            <Form.Control
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleInputChange}
+              onBlur={handleInputBlur}
+              isInvalid={!!formErrors.firstName}
+            />
+            <Form.Control.Feedback type="invalid">
+              {formErrors.firstName}
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group controlId="lastName">
+            <Form.Label>Apellido <span>*</span></Form.Label>
+            <Form.Control
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleInputChange}
+              onBlur={handleInputBlur}
+              isInvalid={!!formErrors.lastName}
+            />
+            <Form.Control.Feedback type="invalid">
+              {formErrors.lastName}
+            </Form.Control.Feedback>
+          </Form.Group>
 
-      <Form.Group controlId="email">
-        <Form.Label>Email</Form.Label>
-        <Form.Control
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-          onBlur={handleInputBlur}
-          isInvalid={!!formErrors.email}
-        />
-        <Form.Control.Feedback type="invalid">
-          {formErrors.email}
-        </Form.Control.Feedback>
-      </Form.Group>
+          <Form.Group controlId="email">
+            <Form.Label>Email <span>*</span></Form.Label>
+            <Form.Control
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              onBlur={handleInputBlur}
+              isInvalid={!!formErrors.email}
+            />
+            <Form.Control.Feedback type="invalid">
+              {formErrors.email}
+            </Form.Control.Feedback>
+          </Form.Group>
 
-      <Form.Group controlId="password">
-        <Form.Label>Contraseña</Form.Label>
-        <Form.Control
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
-          onBlur={handleInputBlur}
-          isInvalid={!!formErrors.password}
-        />
-        <Form.Control.Feedback type="invalid">
-          {formErrors.password}
-        </Form.Control.Feedback>
-      </Form.Group>
+          <Form.Group controlId="password">
+            <Form.Label>Contraseña <span>*</span></Form.Label>
+            <Form.Control
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+              onBlur={handleInputBlur}
+              isInvalid={!!formErrors.password}
+            />
+            <Form.Control.Feedback type="invalid">
+              {formErrors.password}
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Row className='rowRegister'>
+            <Button className='buttonRegister mx-5' variant="primary" type="submit">
+              Registrarse
+            </Button>
+            
 
-      <Button variant="primary" type="submit">
-        Registrarse
-      </Button>
-      <Link to="/auth/login" className="btn-primary text-decoration-none">
-            Back to login
-          </Link>
-    </Form>
-    </Container>
+            <Link to="/auth/login" className="text-center" id='btn-Btl'>
+              Back to login
+            </Link>
+          </Row>
+
+
+        </Form>
+      </Container>
+    </div>
+
+
   )
 }
 export default Register

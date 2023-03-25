@@ -1,0 +1,50 @@
+#containerRegister {
+    margin: 0 auto;
+    margin-top: 13rem;
+    margin-bottom: 13rem;
+    width: 35rem;
+}
+
+#bodyRegister {
+    background-color: #a8dadc;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+.buttonRegister{
+    width: 20rem;
+    letter-spacing: 1.5px;
+    display: flex;
+    justify-content: center;
+
+}
+
+#btn-Btl {
+    background-color: #f7ede2;
+    border: #023047 2px solid;
+    text-decoration: none;
+    color: #023047;
+    display: flex;
+    justify-content: center;
+    width: 15rem;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 50px;
+
+    align-self: center;
+}
+
+#btn-Btl:hover,
+#btn-Btl:focus,
+#btn-Btl:active {
+    background-color: #023047;
+    border-color: #023047;
+    box-shadow: none;
+    color: #f7ede2;
+}
+.rowRegister{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

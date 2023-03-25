@@ -9,10 +9,12 @@ import Login from "./components/views/login/Login";
 import Register from "./components/views/register/Register";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "./config/axiosInit";
-import Menu from "./components/views/Menu/Menu";
-import MenuDetails from "./components/views/Menu/Carta/MenuDetails";
+import Products from "./components/Products/Products";
+import ProductsTable from "./components/ProductsTable/ProductsTable"
+
 
 function App() {
+  const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
   const [products, setProducts] = useState([]);
   //uso de variable de entorno
 
@@ -39,26 +41,30 @@ function App() {
     <div>
       <BrowserRouter>
         <Navigation />
-        <main>
+        <main id="bodyy">
           <Routes>
             <Route exact path="/" element={<Home products={products} />} />
-            <Route exact path="/Menu" element={<Menu />} />
-            <Route
-              exact
-              path="/*"
-            />
-            
+
+
+
             <Route
               exact
               path="/auth/login/"
               element={<Login />}
             />
+
             <Route exact path="/auth/register/" element={<Register />} />
             <Route exact path="*" element={<Error404 />} />
+            <Route exact path="/Products/Create" element={<Products />} />
+            <Route exact path="/Products" element={<ProductsTable
+              products={products}
+              URL={URL}
+
+            />} />
           </Routes>
         </main>
-        <Footer />
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }

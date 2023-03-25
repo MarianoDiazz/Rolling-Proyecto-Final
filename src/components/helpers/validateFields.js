@@ -38,12 +38,10 @@ export const validateCategory = (field) => {
   if (
     regExpCategory.test(field) &&
     field.trim() !== "" &&
-    (field === "de-carne" ||
-      field === "de-cerdo" ||
-      field === "de-pollo" ||
-      field === "veganas" ||
-      field === "bebidas" ||
-      field === "postre")
+    (field === "Hamburguesa" ||
+      field === "Pizzas" ||
+      field === "Desayunos" ||
+      field === "Bebidas" )
   ) {
     return true;
   } else {

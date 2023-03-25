@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import "./login.css"
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -36,7 +37,7 @@ const Login = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{ height: '90vh' }}>
+    <div className="d-flex justify-content-center align-items-center" id='login-body' style={{ height: '90vh' }}>
       <Card style={{ width: '20rem' }}>
         <Card.Body>
           <Card.Title className="text-center mb-4">Iniciar sesión</Card.Title>

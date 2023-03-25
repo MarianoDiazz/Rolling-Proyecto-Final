@@ -3,6 +3,8 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import "./navbar.css"
+import logo from "./LogoRolling.png"
 
 const Navigation = ({ loggedUser }) => {
 
@@ -32,18 +34,18 @@ const Navigation = ({ loggedUser }) => {
 
   return (
     <div>
-      <Navbar className="bg-red" expand="lg">
+      <Navbar variant="light" className="navbar" expand="lg">
         <Container>
           <Navbar.Brand className="logo" href="/">
-            Rolling Food
+            <img src={logo} alt="logo" className="logo"></img>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto color-nav">
+            <Nav className="ms-auto">
               <Link className="nav-link" to="/">
                 Home
               </Link>
-              <Link className="nav-link" to="/Menu">
+              <Link className="nav-link" to="/Products">
                 Menu
               </Link>
               <Nav className="ml-auto">
